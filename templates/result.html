@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Plant Species Detector</title>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<style>
+body{margin:0;padding:0;background-color:#d9d9d9;background-image:url('{{ url_for('static', filename='nature.jpg') }}');}
+#header{width:100%;height:70px;background-color:#00994d;}
+#mainheader{width:1000px;height:70px;background-color:#00994d;margin:auto;}
+#main{width:1000px;height:700px;margin:60px auto;background-color:#f2f2f2;padding-top:50px;}
+#imagebox{width:340px;height:250px;background-color:white;margin:auto;}
+#resultbox{width:370px;height:140px;margin:20px auto;}
+#button{width:370px;padding:10px;background-color:#ffa366;border:none;border-radius:6px;color:white;font-size:20px;}
+#applogo{font-family:Aladin;font-weight:bolder;color:white;font-size:30px;line-height:70px;float:left;}
+#about{width:55px;height:55px;border:4px solid white;border-radius:55px;color:white;font-size:20px;float:right;margin-top:2px;}
+#predictname{color:green;font-size:25px;font-family:Arial;font-weight:bold;}
+#sciname{font-size:20px;font-family:Arial;font-weight:bold;}
+
+@media (min-width: 300px) and (max-width: 500px) {
+    
+#header{width:100%;height:70px;background-color:#00994d;}
+#mainheader{width:100%;height:70px;background-color:#00994d;margin:auto;}
+#main{width:95%;height:600px;margin:60px auto;background-color:#f2f2f2;padding-top:50px;}
+#imagebox{width:300px;height:250px;background-color:white;margin:auto;}
+#resultbox{width:300px;height:140px;margin:20px auto;}
+#button{width:300px;padding:12px;background-color:#ffa366;border:none;border-radius:6px;color:white;font-size:20px;}
+#applogo{font-family:Aladin;font-weight:bolder;color:white;font-size:23px;line-height:70px;float:left;margin-left:5px;}
+#about{width:54px;height:54px;border:3px solid white;border-radius:54px;color:white;font-size:17px;float:right;margin-top:4.5px;margin-right:2px;}
+#predictname{color:green;font-size:25px;font-family:Arial;font-weight:bold;}
+#sciname{font-size:20px;font-family:Arial;font-weight:bold;}  
+}
+
+</style>
+</head>
+
+<body>
+<div id="header">
+<div id="mainheader">
+<a href="http://127.0.0.1:5000/" style="text-decoration:none;" id="applogo"><i>Plant Species Detection</i></a>
+<div id="about"><a style="line-height:50px;margin:2px;text-decoration:none;color:white;" href="https://shmpl.co.in/about.html">About</a></div>
+</div>
+</div>
+<div id ="main">
+<div id="imagebox">
+    
+    <img src="{{ url_for('static', filename= 'images/' +fimage) }}" style="width:100%;height:100%;"/>
+</div>
+<div id="resultbox">
+<p id="predictname">{{o}}</p>
+<p id="sciname">confidence : {{scname}}</p>
+</div>
+<p align="center"><a href="http://127.0.0.1:5000/"><button id="button">Clear</button></a></p>
+
+
+
+</div>
+
+
+
+</body>
+
+
+
+
+</html>
